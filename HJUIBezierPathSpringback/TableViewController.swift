@@ -124,3 +124,33 @@ class HJArcSpringback: UIView {
     }
     
 }
+
+/*
+ 使用方法
+ let gradientLayer = CAGradientLayer().GradientLayer()
+ gradientLayer.frame = self.view.frame
+ self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+ */
+//渐变背景色
+extension CAGradientLayer {
+    
+    func GradientLayer() -> CAGradientLayer {
+        
+        let topColor = UIColor.whiteColor()
+        
+        let buttomColor = UIColor.brownColor()
+        
+        let gradientColors: [CGColor] = [topColor.CGColor, buttomColor.CGColor]
+        
+        let gradientLocations: [CGFloat] = [0.0, 1.0]
+        
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        
+        gradientLayer.colors = gradientColors
+        
+        gradientLayer.locations = gradientLocations
+        
+        return gradientLayer
+        
+    }
+}
